@@ -4,6 +4,9 @@ branches:
   - develop
   - "/^release-[0-999].[0-999]$/"
   - master
+notifications:
+  slack:
+    secure: suDvDSHVeBF7XYrcwCTT1i/2+tYYCS0KH+tK771TcmYMpstNMjkIp29x998lNcZt3aOo11mItqSt0FszcB8ux/tHIA5KJZ7wXbDhpnrF+5lnkEo/Jpby95WMO1rLuBuWVLjlv9TIXbVsNzSWm2sS4nMuonZedN6bAXf0veDO8ph/ZSDasNcFKzK2Vz106uyV0MyrjMh72eUQXczWWt68ObzdMxwcWGh1/rQaBmziqUBRb3J+mbYYedx8hWClJGPgP8ans1V4eR+/l/AnGIRmkyLN3nimQAX1XSeFFLzMkX+/J+nhvew9K5WYme1sE7tfik7gDyN9/oiUa68pvLDREbJyXnnNcNLYIkY453b/t8p17iD49wATXUtHQq5UWyAqRqXEWJ2qXL5eb/noOxIpdHVwNzsMBCpVLpvafzSRQXnpgjr2H2fEsMOv/R5dT/lKml/+E3Jx3CZD56TSkqIndHJdujWllTfbsVgcwe8iltyYqDoiEDgo4CJodI0bbK0tPhz4X8hUZGGvnu1WSq9duB9a+vjLmtXPez2hShf/22WxJq9h4d1IXdZQMgTxhE7E4+uOKSiY9FCPRurUrr468NqcFytVTXn+CfHPwku4mAKKAakR01gXax9XTeiIc7FiQCPrpaQVmSxG7pwWB32CnXpYSzrS62jeDvBn8Itm5RM=
 install:
 - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 script:
@@ -14,6 +17,3 @@ deploy:
   api_key: "$HEROKU"
   on:
     branch: master
-notifications:
-  slack:
-    secure: suDvDSHVeBF7XYrcwCTT1i/2+tYYCS0KH+tK771TcmYMpstNMjkIp29x998lNcZt3aOo11mItqSt0FszcB8ux/tHIA5KJZ7wXbDhpnrF+5lnkEo/Jpby95WMO1rLuBuWVLjlv9TIXbVsNzSWm2sS4nMuonZedN6bAXf0veDO8ph/ZSDasNcFKzK2Vz106uyV0MyrjMh72eUQXczWWt68ObzdMxwcWGh1/rQaBmziqUBRb3J+mbYYedx8hWClJGPgP8ans1V4eR+/l/AnGIRmkyLN3nimQAX1XSeFFLzMkX+/J+nhvew9K5WYme1sE7tfik7gDyN9/oiUa68pvLDREbJyXnnNcNLYIkY453b/t8p17iD49wATXUtHQq5UWyAqRqXEWJ2qXL5eb/noOxIpdHVwNzsMBCpVLpvafzSRQXnpgjr2H2fEsMOv/R5dT/lKml/+E3Jx3CZD56TSkqIndHJdujWllTfbsVgcwe8iltyYqDoiEDgo4CJodI0bbK0tPhz4X8hUZGGvnu1WSq9duB9a+vjLmtXPez2hShf/22WxJq9h4d1IXdZQMgTxhE7E4+uOKSiY9FCPRurUrr468NqcFytVTXn+CfHPwku4mAKKAakR01gXax9XTeiIc7FiQCPrpaQVmSxG7pwWB32CnXpYSzrS62jeDvBn8Itm5RM=
