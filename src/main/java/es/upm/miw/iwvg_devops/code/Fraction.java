@@ -77,6 +77,12 @@ public class Fraction {
         return new Fraction(numerator, denominator);
     }
 
+    public Fraction multiply(Fraction fraction) {
+        int numerator = this.numerator * fraction.numerator;
+        int denominator = this.denominator * fraction.denominator;
+        return new Fraction(numerator, denominator);
+    }
+
     @Override
     public String toString() {
         return "Fraction{" +
