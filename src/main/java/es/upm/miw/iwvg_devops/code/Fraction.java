@@ -72,7 +72,7 @@ public class Fraction {
     }
 
     public Fraction add(Fraction fraction) {
-        int numerator = this.numerator * fraction.denominator - fraction.numerator * this.denominator;
+        int numerator = this.numerator * fraction.denominator + fraction.numerator * this.denominator;
         int denominator = this.denominator * fraction.denominator;
         return new Fraction(numerator, denominator);
     }
