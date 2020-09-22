@@ -83,6 +83,12 @@ public class Fraction {
         return new Fraction(numerator, denominator);
     }
 
+    public Fraction divide(Fraction fraction) {
+        int numerator = this.numerator * fraction.denominator;
+        int denominator = this.denominator * fraction.numerator;
+        return new Fraction(numerator, denominator);
+    }
+
     @Override
     public String toString() {
         return "Fraction{" +
