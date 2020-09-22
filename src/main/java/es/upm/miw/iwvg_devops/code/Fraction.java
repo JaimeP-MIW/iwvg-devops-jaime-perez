@@ -67,6 +67,10 @@ public class Fraction {
         return numerator > denominator;
     }
 
+    public boolean isEquivalent(Fraction fraction){
+        return numerator * fraction.denominator == denominator * fraction.numerator;
+    }
+
     @Override
     public String toString() {
         return "Fraction{" +
