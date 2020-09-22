@@ -63,6 +63,10 @@ public class Fraction {
         return numerator < denominator;
     }
 
+    public boolean isImproper() {
+        return numerator > denominator;
+    }
+
     @Override
     public String toString() {
         return "Fraction{" +
