@@ -67,8 +67,14 @@ public class Fraction {
         return numerator > denominator;
     }
 
-    public boolean isEquivalent(Fraction fraction){
+    public boolean isEquivalent(Fraction fraction) {
         return numerator * fraction.denominator == denominator * fraction.numerator;
+    }
+
+    public Fraction add(Fraction fraction) {
+        int numerator = this.numerator * fraction.denominator - fraction.numerator * this.denominator;
+        int denominator = this.denominator * fraction.denominator;
+        return new Fraction(numerator, denominator);
     }
 
     @Override
