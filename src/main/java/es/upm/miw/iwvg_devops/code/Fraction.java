@@ -59,6 +59,10 @@ public class Fraction {
         return (double) numerator / denominator;
     }
 
+    public boolean isProper() {
+        return numerator < denominator;
+    }
+
     @Override
     public String toString() {
         return "Fraction{" +
