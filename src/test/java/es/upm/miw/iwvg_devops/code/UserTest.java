@@ -14,7 +14,9 @@ public class UserTest {
 
     @BeforeEach
     void before() {
-        user = new User("0", "Jaime", "Pérez", new ArrayList<>());
+        List<Fraction> fractions = new ArrayList<>();
+        fractions.add(new Fraction());
+        user = new User("0", "Jaime", "Pérez", fractions);
     }
 
     @Test
@@ -46,18 +48,23 @@ public class UserTest {
 
     @Test
     void testGetFractions() {
-        assertEquals(0, user.getFractions().size());
+        assertEquals(1, user.getFractions()
+                .get(user.getFractions().size() - 1)
+                .getNumerator());
+        assertEquals(1, user.getFractions()
+                .get(user.getFractions().size() - 1)
+                .getDenominator());
     }
 
     @Test
     void testSetFractions() {
         List<Fraction> fractions = new ArrayList<>();
-        fractions.add(new Fraction());
+        fractions.add(new Fraction(2, 2));
         user.setFractions(fractions);
-        assertEquals(1, user.getFractions()
+        assertEquals(2, user.getFractions()
                 .get(user.getFractions().size() - 1)
                 .getNumerator());
-        assertEquals(1, user.getFractions()
+        assertEquals(2, user.getFractions()
                 .get(user.getFractions().size() - 1)
                 .getDenominator());
     }
@@ -81,6 +88,11 @@ public class UserTest {
     @Test
     void testInitials() {
         assertEquals("J.", user.initials());
+    }
+
+    @Test
+    void testGetFirstFractionDecimal() {
+        assertEquals(1.0, user.getFirstFractionDecimal());
     }
 
 }

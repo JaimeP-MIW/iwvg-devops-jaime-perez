@@ -14,4 +14,9 @@ public class SearchesTest {
                     .collect(Collectors.toList()).size());
     }
 
+    @Test
+    void testFindFirstDecimalFractionByUserName() {
+        assertEquals(2.0, new Searches().findFirstDecimalFractionByUserName("Ana"));
+    }
+
 }
