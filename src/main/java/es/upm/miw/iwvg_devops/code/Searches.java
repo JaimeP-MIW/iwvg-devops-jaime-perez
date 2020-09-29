@@ -14,8 +14,15 @@ public class Searches {
     public double findFirstDecimalFractionByUserName(String name) {
         return new UsersDatabase().findAll()
                 .filter(user -> user.getName().equals(name))
-                .findFirst().get()
+                .findFirst().orElse(null)
                 .getFirstFractionDecimal();
+    }
+
+    public Stream<String> findUserNameBySomeImproperFraction() {
+        return new UsersDatabase().findAll()
+                .filter(user -> user.getFractions().stream()
+                        .anyMatch(fraction -> fraction.isImproper()))
+                .map(User::getName);
     }
 
 }
