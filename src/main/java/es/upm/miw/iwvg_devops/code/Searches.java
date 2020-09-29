@@ -11,4 +11,11 @@ public class Searches {
                 .map(User::getId);
     }
 
+    public double findFirstDecimalFractionByUserName(String name) {
+        return new UsersDatabase().findAll()
+                .filter(user -> user.getName().equals(name))
+                .findFirst().get()
+                .getFirstFractionDecimal();
+    }
+
 }

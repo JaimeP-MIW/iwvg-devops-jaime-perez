@@ -64,6 +64,10 @@ public class User {
         return this.name.substring(0, 1) + ".";
     }
 
+    public double getFirstFractionDecimal() {
+        return this.fractions.get(0).decimal();
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -73,4 +77,5 @@ public class User {
                 ", fractions=" + fractions +
                 '}';
     }
+
 }
