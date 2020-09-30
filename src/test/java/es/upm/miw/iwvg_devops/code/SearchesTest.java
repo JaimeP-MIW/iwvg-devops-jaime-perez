@@ -27,4 +27,11 @@ public class SearchesTest {
         assertEquals(5, new Searches().findUserNameBySomeImproperFraction().count());
     }
 
+    @Test
+    void testFindHighestFraction() {
+        Fraction fractionFound = new Searches().findHighestFraction();
+        assertEquals(1, fractionFound.getNumerator());
+        assertEquals(0, fractionFound.getDenominator());
+    }
+
 }
