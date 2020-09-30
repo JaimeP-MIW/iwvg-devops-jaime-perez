@@ -61,19 +61,24 @@ public class FractionTest {
     @Test
     void testAdd() {
         assertEquals(new Fraction(25, 12).toString(),
-                    fraction.add(operationFraction).toString());
+                fraction.add(operationFraction).toString());
     }
 
     @Test
     void testMultiply() {
         assertEquals(new Fraction(12, 12).toString(),
-                    fraction.multiply(operationFraction).toString());
+                fraction.multiply(operationFraction).toString());
     }
 
     @Test
     void testDivide() {
         assertEquals(new Fraction(9, 16).toString(),
-                    fraction.divide(operationFraction).toString());
+                fraction.divide(operationFraction).toString());
+    }
+
+    @Test
+    void testIsHigher() {
+        assertFalse(fraction.isHigher(operationFraction));
     }
 
 }

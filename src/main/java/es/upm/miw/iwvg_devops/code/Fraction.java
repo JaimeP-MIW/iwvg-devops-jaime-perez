@@ -89,6 +89,10 @@ public class Fraction {
         return new Fraction(numerator, denominator);
     }
 
+    public boolean isHigher(Fraction fraction) {
+        return this.decimal() > fraction.decimal();
+    }
+
     @Override
     public String toString() {
         return "Fraction{" +
@@ -96,4 +100,5 @@ public class Fraction {
                 ", denominator=" + denominator +
                 '}';
     }
+
 }
