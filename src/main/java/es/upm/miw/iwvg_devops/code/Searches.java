@@ -26,7 +26,7 @@ public class Searches {
         User userFound = new UsersDatabase().findAll()
                 .filter(user -> user.getName().equals(name))
                 .findFirst().orElse(null);
-        if (userFound != null) {
+        if (userFound != null){
             return userFound.getFirstFractionDecimal();
         }
         return null;
